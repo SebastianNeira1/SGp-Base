@@ -43,17 +43,12 @@ export class LoginComponent implements OnInit {
   	}
   	
   	this.webService.loginUsuario(query).subscribe(res=>{
-  		if(query.username == e.target.elements[0].value){
-        if(query.password == e.target.elements[1].value){
+  	if(this.user.obtenerUsuario("seba","asdasd")){
           console.log('conectado? = '+this.user.getUserLoggedIn());
           this.user.setUserLoggedIn();
           console.log('login correcto');
           console.log('conectado? = '+this.user.getUserLoggedIn());
-        }else{
-            console.log('contraseña incorrecta');
-          }
-  		}
-  		else{
+      }else{
         if(res.length == 0){
           console.log('Usuario o contrasena incorrecta');
         }
