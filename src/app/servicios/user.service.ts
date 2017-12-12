@@ -27,8 +27,8 @@ export class UserService {
 	  	return this.http.post(this.url + 'crearUsuario',usuario,this.headers);
 	}
 
-	obtenerUsuario(nombreUsuario:String){
-		return this.http.get(this.url + 'obtenerUsuario?nombreusuario='+nombreUsuario).map(res=>res.json());
+	obtenerUsuario(nombreUsuario:String, password:String){
+		return this.http.get(this.url + 'doLogin?nombreusuario='+nombreUsuario+'&passwordusuario='+password).map(res=>res.json());
 	}
 
 	obtenerContrasena(contrasena:String){
